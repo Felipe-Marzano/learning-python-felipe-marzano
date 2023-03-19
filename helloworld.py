@@ -1,1 +1,4 @@
-print('Hello, World!')
+# print('Hello, World!')
+
+helloWorld = 'Hello, World!'
+print(helloWorld)

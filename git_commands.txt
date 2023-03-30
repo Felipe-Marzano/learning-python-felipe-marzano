@@ -1,0 +1,78 @@
+# Quando criar uma pasta:
+git init
+
+# Status da pasta:
+git status
+
+# Controle de versao
+    - Pra adicionar apenas um arquivo:
+git add "nome do arquivo.extensao"
+
+    - Pra adicionar todos os arquivos da pasta:
+git add .
+
+# Criar versoes do codigo com "commit":
+
+git commit -m "texto"
+    - exemplo de "texto" = "commit inicial"
+
+# Adicionar o link do repositorio
+git remote add origin LINK
+
+# Comando para enviar os arquivos:
+git push
+
+# Como verificar o historico de atualizacoes:
+git reflog
+
+# Como navegar entre versoes do seu codigo:
+git reset --hard ID
+
+# Verificar branch:
+git branch
+
+# Adicionar nova branch:
+git branch nome_da_branch
+    -exemplor: git branch staging
+
+# Trocar de branch:
+git checkout nome_da_branch
+
+# Baixa a branch que vc esta (fazer isso antes de fazer o merge)
+git pull
+
+# Unir as branch com merge
+git merge nome_da_branch_que_quero_pegar_os_arquivos
+exemplo:
+git merge staging
+(quando eu tiver na master)
+
+# Ignorar arquivos (nao subir pro controle de versao)
+touch .gitignore
+	- vai criar um arquivo dentro da pasta com o nome .gitignore
+	- coloque o nome do arquivo ou pasta que vc quer ignorar dentro dele
+
+
+			### RESUMO DOS COMANDOS ###
+git init										inicializa um novo repositorio
+git add .										adiciona os arquivos atuais ao proximo commit
+git status										verificar status atual do repositorio git
+git commit -m "mensagem do commit"						cria um novo commit com uma mensagem
+git push										envia as atualizacoes para a nuvem na branch atualmente ativa
+git branch										permite listar e ver qual branch esta ativa atualmente
+git checkout nome-da-branch							permite mudar para uma nova branch
+git checkout -b nome-da-branch-de-origem nome-da-nova-branch	permite mudar e criar uma nova branch com base em outra
+git merge branch-a-receber-merge						permite fazer merge da branch ativa atualmente com outra branch
+git pull										atualiza a branch atualmente ativa
+
+
+			### ATENCAO ###
+### ORDEM A SEGUIR QUANDO TRABALHANDO EM EQUIPE ###
+1. git pull da branch principal
+2. gerar um nova branch a partir da branch principal
+3 trabalhar e adicionar novas funcionalidades na nova branch que criou
+4. finalizar o trabalho na branch temporaria
+5. git checkou na branch principal
+6. git pull
+7. merge o codigo da branch temporaria com a branch principal(depois de testar)
+8. git push da branch principal
